@@ -15,14 +15,15 @@ class PointsManagerActionSerializer(BulkSerializerMixin, serializers.ModelSerial
     class Meta:
         model = PointsManagerAction
         fields = (
-        'id', 'manager', 'managerText', 'points', 'managerText', 'pointsinfo', 'accepted', 'decided', 'daily_quest')
+        'id', 'manager', 'managerText', 'points', 'submitterText', 'pointsinfo', 'accepted', 'decided', 'daily_quest')
         list_serializer_class = BulkListSerializer
 
 
 class BasicPointsSubmissionSerializer(BulkSerializerMixin, serializers.ModelSerializer):
     class Meta:
         model = BasicPointSubmission
-        fields = ('id', 'manager', 'managerText', 'points', 'managerText', 'pointsinfo', 'accepted', 'decided')
+        fields = ('id', 'manager', 'managerText', 'points', 'submitterText', 'pointsinfo', 'accepted', 'decided')
+##^previously: fields = ('id', 'manager', 'managerText', 'points', 'managerText', 'pointsinfo', 'accepted', 'decided')##
         list_serializer_class = BulkListSerializer
 
 
@@ -40,7 +41,7 @@ class BasicUserPointSubmissionSerializer(BulkSerializerMixin, serializers.ModelS
         model = BasicUserPointSubmission
         fields = (
         'id', 'date', 'manager', 'managerText', 'points', 'submitterText', 'gamemode', 'pointsinfo', 'accepted',
-        'decided', 'daily_quest', 'proof', 'tank', 'score')
+        'decided', 'daily_quest', 'proof', 'tank', 'score','isDB')
         list_serializer_class = BulkListSerializer
 
 
@@ -57,7 +58,7 @@ class BasicUserPointSubmissionProofusedSerializer(BulkSerializerMixin, serialize
         model = BasicUserPointSubmission
         fields = (
             'id', 'date', 'manager', 'managerText', 'points', 'submitterText', 'gamemode', 'pointsinfo', 'accepted',
-            'decided', 'daily_quest', 'proof', 'tank', 'score','proofused','get_daily_builds','get_daily_multiplier')
+            'decided', 'daily_quest', 'proof', 'tank', 'score','proofused','get_daily_builds','get_daily_multiplier','isDB')
         list_serializer_class = BulkListSerializer
 
 

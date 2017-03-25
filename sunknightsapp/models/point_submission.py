@@ -38,6 +38,7 @@ class BasicUserPointSubmission(BasicPointSubmission):
     gamemode = models.ForeignKey(DiepGamemode)
     tank = models.ForeignKey(DiepTank)
     score = models.PositiveIntegerField(default=0)
+    isDB = models.BooleanField(default=False)
 
 
     @property

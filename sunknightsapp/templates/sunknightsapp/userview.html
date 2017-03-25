@@ -225,8 +225,10 @@
                 submission['tank']['name'],
                 submission['submitterText'],
                 submission['points'],
+                submission['isDB'],
                 "<a href=\"" + submission['proof'] + "\">Prooflink</a>"
               ]).draw(false)
+              console.log(submission['isDB']);
             }
             else {
               console.log('fuck this shit')
